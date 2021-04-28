@@ -16,6 +16,7 @@ JEngine是针对Unity开发者设计的**开箱即用**的框架，封装了强�
 > 2. 自行导入```VEngine.dll```和```VEngine.Editor.dll```到```Assets/Dependecies/XAsset6.0```
 > 3. 打开热更工程，添加对这两个DLL的引用
 > 4. **（重要）**：每次打AB包之前，在导航栏，JEngine->选择加密DLL，不然没办法读DLL
+> 5. 然后就没什么需要注意的了
 
 
 
