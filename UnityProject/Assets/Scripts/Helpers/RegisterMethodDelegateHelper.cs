@@ -4,13 +4,11 @@ using System.Timers;
 using ILRuntime.Runtime.Intepreter;
 using JEngine.Interface;
 using JEngine.Net;
-using libx;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using WebSocketSharp;
 using AppDomain = ILRuntime.Runtime.Enviorment.AppDomain;
-using Object = System.Object;
-
+using Object = System.Object;using VEngine;
 namespace JEngine.Helper
 {
     public class RegisterMethodDelegateHelper: IRegisterHelper
@@ -32,12 +30,17 @@ namespace JEngine.Helper
             appdomain.DelegateManager.RegisterMethodDelegate<object,object>();
             appdomain.DelegateManager.RegisterMethodDelegate<object,object,object>();
             appdomain.DelegateManager.RegisterMethodDelegate<object,object,object,object>();
+            #if !XASSET_6
+            appdomain.DelegateManager.RegisterMethodDelegate<AssetRequest>();
+#else
+            appdomain.DelegateManager.RegisterMethodDelegate<Asset>();
+            appdomain.DelegateManager.RegisterMethodDelegate<Scene>();
+#endif
             appdomain.DelegateManager.RegisterMethodDelegate<System.Int64>();
             appdomain.DelegateManager.RegisterMethodDelegate<Object, MessageEventArgs>();
             appdomain.DelegateManager.RegisterMethodDelegate<Object, ElapsedEventArgs>();
             appdomain.DelegateManager.RegisterMethodDelegate<Object[]>();
             appdomain.DelegateManager.RegisterMethodDelegate<SocketIOEvent>();
-            appdomain.DelegateManager.RegisterMethodDelegate<AssetRequest>();
             appdomain.DelegateManager.RegisterMethodDelegate<UnityEngine.Object>();
             appdomain.DelegateManager.RegisterMethodDelegate<Object>();
             appdomain.DelegateManager

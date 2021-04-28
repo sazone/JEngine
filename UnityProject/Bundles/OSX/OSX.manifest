@@ -1,0 +1,43 @@
+ManifestFileVersion: 0
+CRC: 183674096
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: hotresources_bundled_controller_dafc27d1bb7971cc1164da20f05d207a.bundle
+      Dependencies: {}
+    Info_1:
+      Name: hotresources_bundled_dll_158eae65611a051f2dfd8fdd51f0636d.bundle
+      Dependencies: {}
+    Info_2:
+      Name: hotresources_bundled_material_6a896d3011f5ea4f7d2467e7cc6279f6.bundle
+      Dependencies: {}
+    Info_3:
+      Name: hotresources_bundled_other_e5244ae6d9a956d008b228bc8b81e25b.bundle
+      Dependencies: {}
+    Info_4:
+      Name: hotresources_bundled_prefab_c1ab748c804aab83fa8ddff27d31eab6.bundle
+      Dependencies:
+        Dependency_0: hotresources_bundled_other_e5244ae6d9a956d008b228bc8b81e25b.bundle
+        Dependency_1: hotresources_bundled_ui_55760bfbe0377d8e071a961ff82f7c1d.bundle
+        Dependency_2: assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle
+    Info_5:
+      Name: assets_hotupdateresources_scene_game_6086e3af6963e1875aa19a34e203366e.bundle
+      Dependencies:
+        Dependency_0: hotresources_bundled_other_e5244ae6d9a956d008b228bc8b81e25b.bundle
+        Dependency_1: hotresources_bundled_ui_55760bfbe0377d8e071a961ff82f7c1d.bundle
+        Dependency_2: assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle
+    Info_6:
+      Name: assets_hotupdateresources_scene_uidemo_57af103f54d760f876aa8814305c296e.bundle
+      Dependencies: {}
+    Info_7:
+      Name: hotresources_bundled_scriptableobject_3753b240ff53426fa00eea013d769710.bundle
+      Dependencies: {}
+    Info_8:
+      Name: hotresources_bundled_textasset_6e488a39801af55b5e1c925c50f9c0ab.bundle
+      Dependencies: {}
+    Info_9:
+      Name: hotresources_bundled_ui_55760bfbe0377d8e071a961ff82f7c1d.bundle
+      Dependencies: {}
+    Info_10:
+      Name: assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle
+      Dependencies: {}

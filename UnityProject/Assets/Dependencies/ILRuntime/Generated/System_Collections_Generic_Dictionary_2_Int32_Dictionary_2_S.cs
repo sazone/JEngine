@@ -14,24 +14,24 @@ using ILRuntime.CLR.Utils;
 
 namespace ILRuntime.Runtime.Generated
 {
-    unsafe class System_Collections_Generic_Dictionary_2_Int32_Dictionary_2_String_AssetRequest_Binding
+    unsafe class System_Collections_Generic_Dictionary_2_Int32_Dictionary_2_String_Asset_Binding
     {
         public static void Register(ILRuntime.Runtime.Enviorment.AppDomain app)
         {
             BindingFlags flag = BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly;
             MethodBase method;
             Type[] args;
-            Type type = typeof(System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>>);
+            Type type = typeof(System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>>);
             args = new Type[]{typeof(System.Int32)};
             method = type.GetMethod("get_Item", flag, null, args, null);
             app.RegisterCLRMethodRedirection(method, get_Item_0);
             args = new Type[]{typeof(System.Int32)};
             method = type.GetMethod("ContainsKey", flag, null, args, null);
             app.RegisterCLRMethodRedirection(method, ContainsKey_1);
-            args = new Type[]{typeof(System.Int32), typeof(System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>)};
+            args = new Type[]{typeof(System.Int32), typeof(System.Collections.Generic.Dictionary<System.String, VEngine.Asset>)};
             method = type.GetMethod("Add", flag, null, args, null);
             app.RegisterCLRMethodRedirection(method, Add_2);
-            args = new Type[]{typeof(System.Int32), typeof(System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>).MakeByRefType()};
+            args = new Type[]{typeof(System.Int32), typeof(System.Collections.Generic.Dictionary<System.String, VEngine.Asset>).MakeByRefType()};
             method = type.GetMethod("TryGetValue", flag, null, args, null);
             app.RegisterCLRMethodRedirection(method, TryGetValue_3);
 
@@ -52,7 +52,7 @@ namespace ILRuntime.Runtime.Generated
             System.Int32 @key = ptr_of_this_method->Value;
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>> instance_of_this_method = (System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>>)typeof(System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
+            System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>> instance_of_this_method = (System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>>)typeof(System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method[key];
@@ -70,7 +70,7 @@ namespace ILRuntime.Runtime.Generated
             System.Int32 @key = ptr_of_this_method->Value;
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>> instance_of_this_method = (System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>>)typeof(System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
+            System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>> instance_of_this_method = (System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>>)typeof(System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.ContainsKey(@key);
@@ -87,14 +87,14 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 3);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            System.Collections.Generic.Dictionary<System.String, libx.AssetRequest> @value = (System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>)typeof(System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
+            System.Collections.Generic.Dictionary<System.String, VEngine.Asset> @value = (System.Collections.Generic.Dictionary<System.String, VEngine.Asset>)typeof(System.Collections.Generic.Dictionary<System.String, VEngine.Asset>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
             System.Int32 @key = ptr_of_this_method->Value;
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 3);
-            System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>> instance_of_this_method = (System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>>)typeof(System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
+            System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>> instance_of_this_method = (System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>>)typeof(System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.Add(@key, @value);
@@ -109,13 +109,13 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 3);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
-            System.Collections.Generic.Dictionary<System.String, libx.AssetRequest> @value = (System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>)typeof(System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>).CheckCLRTypes(__intp.RetriveObject(ptr_of_this_method, __mStack));
+            System.Collections.Generic.Dictionary<System.String, VEngine.Asset> @value = (System.Collections.Generic.Dictionary<System.String, VEngine.Asset>)typeof(System.Collections.Generic.Dictionary<System.String, VEngine.Asset>).CheckCLRTypes(__intp.RetriveObject(ptr_of_this_method, __mStack));
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
             System.Int32 @key = ptr_of_this_method->Value;
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 3);
-            System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>> instance_of_this_method = (System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>>)typeof(System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
+            System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>> instance_of_this_method = (System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>>)typeof(System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>>).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
 
             var result_of_this_method = instance_of_this_method.TryGetValue(@key, out @value);
 
@@ -167,7 +167,7 @@ namespace ILRuntime.Runtime.Generated
                     break;
                  case ObjectTypes.ArrayReference:
                     {
-                        var instance_of_arrayReference = __mStack[ptr_of_this_method->Value] as System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>[];
+                        var instance_of_arrayReference = __mStack[ptr_of_this_method->Value] as System.Collections.Generic.Dictionary<System.String, VEngine.Asset>[];
                         instance_of_arrayReference[ptr_of_this_method->ValueLow] = @value;
                     }
                     break;
@@ -189,7 +189,7 @@ namespace ILRuntime.Runtime.Generated
             ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
             StackObject* __ret = ILIntepreter.Minus(__esp, 0);
 
-            var result_of_this_method = new System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, libx.AssetRequest>>();
+            var result_of_this_method = new System.Collections.Generic.Dictionary<System.Int32, System.Collections.Generic.Dictionary<System.String, VEngine.Asset>>();
 
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }

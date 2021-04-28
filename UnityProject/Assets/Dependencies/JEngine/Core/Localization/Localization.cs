@@ -31,10 +31,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using libx;
 using UnityEngine;
-using Object = UnityEngine.Object;
-
+using Object = UnityEngine.Object;using VEngine;
 namespace JEngine.Core
 {
     public class Localization
@@ -56,16 +54,22 @@ namespace JEngine.Core
         
         private static void Init()
         {
-            if (!Object.FindObjectOfType<Assets>())
+            #if !XASSET_6
+if (!Object.FindObjectOfType<Assets>())
             {
                 Log.PrintError("请先初始化XAsset");
                 return;
             }
+#endif
             
             _phrases = new Dictionary<string, Dictionary<string, string>>(0);
             ChangeLanguage(PlayerPrefs.GetString("JEngine.Core.Localization.language",CultureInfo.InstalledUICulture.Name));
             
+            #if XASSET_6
+            var req = Asset.Load(CsvLoc,typeof(TextAsset));
+#else
             var req = Assets.LoadAsset(CsvLoc,typeof(TextAsset));
+#endif
             TextAsset file = (TextAsset)req.asset;
             
             //获取全部行

@@ -1,0 +1,33 @@
+ManifestFileVersion: 0
+CRC: 2677380993
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 55760bfbe0377d8e071a961ff82f7c1d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9e6ad29cbd2df8fbe1a15315db0e51ab
+HashAppended: 1
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/HotUpdateResources/UI/Btn_MainMenu_n.png
+- Assets/HotUpdateResources/UI/background4_v2.png
+- Assets/HotUpdateResources/UI/background4.png
+- Assets/HotUpdateResources/UI/Title2_bg.png
+- Assets/HotUpdateResources/UI/Btn_Back_h.png
+- Assets/HotUpdateResources/UI/bg_GoodsTitle.png
+- Assets/HotUpdateResources/UI/Btn_Buy1_n.png
+- Assets/HotUpdateResources/UI/Icon_Back1.png
+- Assets/HotUpdateResources/UI/background1.png
+- Assets/HotUpdateResources/UI/bg_Title1.png
+- Assets/HotUpdateResources/UI/Btn_Title_p.png
+- Assets/HotUpdateResources/UI/small title02_bg.png
+- Assets/HotUpdateResources/UI/Btn_Buy1_p.png
+- Assets/HotUpdateResources/UI/background5_v2.png
+- Assets/HotUpdateResources/UI/bg_Title2 .png
+- Assets/HotUpdateResources/UI/bg_Input0_n.png
+Dependencies: []

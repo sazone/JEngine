@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 1305150739
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 57af103f54d760f876aa8814305c296e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: aaa964935184943148d93b8145acc862
+HashAppended: 1
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+Assets:
+- Assets/HotUpdateResources/Scene/UIDemo.unity
+Dependencies: []

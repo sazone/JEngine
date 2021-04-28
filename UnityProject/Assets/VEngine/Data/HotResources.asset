@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 819988854, guid: cc04a62f6ac5d4e2ebde4d54aa89db84, type: 3}
+  m_Name: HotResources
+  m_EditorClassIdentifier: 
+  groups:
+  - {fileID: 11400000, guid: 53cdd03f0c2b84bccbd5f000f6da3c18, type: 2}
+  - {fileID: 11400000, guid: 9de6ad0b0bb554660a9cd7de86751018, type: 2}
+  size: 1546040
+  settings: {fileID: 11400000, guid: cfeff71045f334665825698abb33936d, type: 2}

@@ -28,12 +28,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using JEngine.Core;
-using libx;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
+#if !XASSET_6
+using libx;
+#endif
 
 namespace JEngine.Editor
 {

@@ -24,7 +24,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 #if UNITY_EDITOR
+using System;
+using System.Diagnostics;
 using System.Reflection;
+using JEngine.Core;
 using UnityEditor;
 using UnityEngine;
 
@@ -60,23 +63,12 @@ namespace JEngine.Editor
                 var result = DLLMgr.ByteToFile(CryptoHelper.AesEncrypt(bytes, s),
                     "Assets/HotUpdateResources/Dll/HotUpdateScripts.bytes");
                 watch.Stop();
-                Log.Print("Convert Dlls in: " + watch.ElapsedMilliseconds + " ms.");
+                Log.Print(String.Format(Setting.GetString(SettingString.DLLConvertLog),
+                    watch.ElapsedMilliseconds));
                 if (!result)
                 {
-                    Log.PrintError("DLL转Byte[]出错！");
+                    Log.PrintError(".dll加密转.bytes出错！");
                 }
-
-                watch = new Stopwatch();
-                watch.Start();
-                BuildScript.BuildRules();
-                watch.Stop();
-                Log.Print("ApplyBuildRules in: " + watch.ElapsedMilliseconds + " ms.");
-
-                watch = new Stopwatch();
-                watch.Start();
-                BuildScript.BuildAssetBundles();
-                watch.Stop();
-                Log.Print("BuildAssetBundles in: " + watch.ElapsedMilliseconds + " ms.");
             };
         }
 #endif

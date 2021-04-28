@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1513063144, guid: cc04a62f6ac5d4e2ebde4d54aa89db84, type: 3}
+  m_Name: DefaultSettings
+  m_EditorClassIdentifier: 
+  excludeFiles:
+  - .cs
+  - .dll
+  - .spriteatlas
+  - .giparams
+  - LightingData.asset
+  - .meta
+  bundleExtension: .bundle
+  version: 0
+  manifests:
+  - {fileID: 11400000, guid: 9e7bb337bae134d488855f50e6fb77f9, type: 2}
+  playerGroups: []
+  buildPlayerGroupsIndex: 0
+  buildAssetBundleOptions: 384
+  scriptPlayMode: 2
+  buildMode: 0
+  startupScene: {fileID: 0}
