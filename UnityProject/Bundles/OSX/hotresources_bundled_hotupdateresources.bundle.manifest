@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3746249677
+CRC: 1983902960
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 762b31285d04b1fd8b260ebe39ea704a
+    Hash: 49ba8bc1c812f323ee83ed6bb916b805
   TypeTreeHash:
     serializedVersion: 2
     Hash: f2fa0ca3ddc7a5e5e210772c1ffa6763
@@ -58,12 +58,32 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 Assets:
+- Assets/HotUpdateResources/UI/Btn_MainMenu_n.png
+- Assets/HotUpdateResources/TextAsset/Localization.csv
+- Assets/HotUpdateResources/UI/background4_v2.png
+- Assets/HotUpdateResources/UI/background4.png
+- Assets/HotUpdateResources/Material/Material.txt
 - Assets/HotUpdateResources/Prefab/Prefab.txt
+- Assets/HotUpdateResources/UI/Title2_bg.png
+- Assets/HotUpdateResources/Controller/Controller.txt
 - Assets/HotUpdateResources/Prefab/UI Root.prefab
+- Assets/HotUpdateResources/UI/Btn_Back_h.png
+- Assets/HotUpdateResources/Other/impact.ttf
+- Assets/HotUpdateResources/ScriptableObject/ScriptableObject.txt
+- Assets/HotUpdateResources/UI/bg_GoodsTitle.png
+- Assets/HotUpdateResources/UI/Btn_Buy1_n.png
+- Assets/HotUpdateResources/Dll/HotUpdateScripts.bytes
+- Assets/HotUpdateResources/UI/Icon_Back1.png
+- Assets/HotUpdateResources/UI/background1.png
+- Assets/HotUpdateResources/UI/bg_Title1.png
+- Assets/HotUpdateResources/UI/Btn_Title_p.png
 - Assets/HotUpdateResources/Prefab/uiview_testView.prefab
+- Assets/HotUpdateResources/UI/small title02_bg.png
+- Assets/HotUpdateResources/UI/Btn_Buy1_p.png
 - Assets/HotUpdateResources/Prefab/InstantiateDemo.prefab
+- Assets/HotUpdateResources/UI/background5_v2.png
+- Assets/HotUpdateResources/UI/bg_Title2 .png
+- Assets/HotUpdateResources/UI/bg_Input0_n.png
 - Assets/HotUpdateResources/Prefab/uiview_btnview.prefab
 Dependencies:
-- /Users/jason/Documents/GitHub/JEngine/UnityProject/Bundles/OSX/hotresource_bundled_other_e5244ae6d9a956d008b228bc8b81e25b.bundle
-- /Users/jason/Documents/GitHub/JEngine/UnityProject/Bundles/OSX/hotresource_bundled_ui_55760bfbe0377d8e071a961ff82f7c1d.bundle
 - /Users/jason/Documents/GitHub/JEngine/UnityProject/Bundles/OSX/assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle

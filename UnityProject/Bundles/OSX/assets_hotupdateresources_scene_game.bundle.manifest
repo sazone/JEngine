@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2796347215
+CRC: 2059989961
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6086e3af6963e1875aa19a34e203366e
+    Hash: 339730705298a0ec5505b23877d99805
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5587280007ba354c0fceb8c21f819652
@@ -78,6 +78,5 @@ ClassTypes:
 Assets:
 - Assets/HotUpdateResources/Scene/Game.unity
 Dependencies:
-- /Users/jason/Documents/GitHub/JEngine/UnityProject/Bundles/OSX/hotresources_bundled_other_e5244ae6d9a956d008b228bc8b81e25b.bundle
-- /Users/jason/Documents/GitHub/JEngine/UnityProject/Bundles/OSX/hotresources_bundled_ui_55760bfbe0377d8e071a961ff82f7c1d.bundle
+- /Users/jason/Documents/GitHub/JEngine/UnityProject/Bundles/OSX/hotresources_bundled_hotupdateresources_49ba8bc1c812f323ee83ed6bb916b805.bundle
 - /Users/jason/Documents/GitHub/JEngine/UnityProject/Bundles/OSX/assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle

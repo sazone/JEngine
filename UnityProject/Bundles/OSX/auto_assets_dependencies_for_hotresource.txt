@@ -1,6 +1,0 @@
-Assets/Resources/Animations/START.controller
- - assets_hotupdateresources_scene_game.bundle
- - hotresource_bundled_uiview_testview.bundle
-Assets/Resources/Animations/TOUCHTOSTART.anim
- - assets_hotupdateresources_scene_game.bundle
- - hotresource_bundled_uiview_testview.bundle

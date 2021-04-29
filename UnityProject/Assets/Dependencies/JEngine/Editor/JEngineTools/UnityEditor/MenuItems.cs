@@ -47,31 +47,6 @@ namespace JEngine.Editor
         {
             Application.OpenURL("https://github.com/JasonXuDeveloper/JEngine");
         }
-      
-        // Xasset Pro,打包需采用AES加密
-#if XASSET_PRO
-        [MenuItem("JEngine/DLL加密 （XASSET PRO请先执行这个再去打Bundles）")]
-        private static void BuildAssetBundles()
-        {
-            DLLMgr.Delete("Assets/HotUpdateResources/Dll/HotUpdateScripts.bytes");
-            CryptoWindow.ShowWindow();
-            CryptoWindow.Build = s =>
-            {
-                var watch = new Stopwatch();
-                watch.Start();
-                var bytes = DLLMgr.FileToByte(DLLMgr.DllPath);
-                var result = DLLMgr.ByteToFile(CryptoHelper.AesEncrypt(bytes, s),
-                    "Assets/HotUpdateResources/Dll/HotUpdateScripts.bytes");
-                watch.Stop();
-                Log.Print(String.Format(Setting.GetString(SettingString.DLLConvertLog),
-                    watch.ElapsedMilliseconds));
-                if (!result)
-                {
-                    Log.PrintError(".dll加密转.bytes出错！");
-                }
-            };
-        }
-#endif
     }
 }
 #endif

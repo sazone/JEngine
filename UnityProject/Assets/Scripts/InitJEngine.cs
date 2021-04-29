@@ -136,7 +136,7 @@ public class InitJEngine : MonoBehaviour
         }
 
         Success = true;
-        InitILrt.InitializeILRuntime(Appdomain);
+        LoadILRuntime.InitializeILRuntime(Appdomain);
     }
 
     public void OnHotFixLoaded()

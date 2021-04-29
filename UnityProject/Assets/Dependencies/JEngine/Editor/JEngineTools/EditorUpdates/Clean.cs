@@ -36,7 +36,9 @@ using UnityEngine;
 namespace JEngine.Editor
 {
     internal static class Clean
-         {
+    {
+        public static bool hasAdded;
+             
              private static bool _isDone = true;
      
              private static readonly string HotProjectName = "HotUpdateScripts";
@@ -44,11 +46,12 @@ namespace JEngine.Editor
              private static readonly DirectoryInfo LibraryDirectory = new DirectoryInfo(Application.dataPath + "/../Library/ScriptAssemblies");
              private static readonly DirectoryInfo HiddenDirectory = new DirectoryInfo("Assets/HotUpdateResources/Dll/Hidden~");
 
-             private static readonly FileInfo HotFile =
+             private static FileInfo HotFile =
                  new FileInfo("Assets/HotUpdateResources/Dll/HotUpdateScripts.bytes");
              
              public static void Update()
              {
+                 hasAdded = true;
                  if (!_isDone || EditorApplication.isPlaying)
                  {
                      return;
@@ -159,6 +162,7 @@ namespace JEngine.Editor
                      var watch = new Stopwatch();
                      watch.Start();
                      DLLMgr.MakeBytes();
+                     HotFile = new FileInfo("Assets/HotUpdateResources/Dll/HotUpdateScripts.bytes");
                      watch.Stop();
                      Log.Print(String.Format(Setting.GetString(SettingString.DLLConvertLog),
                          watch.ElapsedMilliseconds));
