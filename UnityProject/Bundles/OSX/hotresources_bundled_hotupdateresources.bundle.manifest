@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1983902960
+CRC: 167609366
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 49ba8bc1c812f323ee83ed6bb916b805
+    Hash: 54f6e2bc72ee353c7ed12776859febde
   TypeTreeHash:
     serializedVersion: 2
     Hash: f2fa0ca3ddc7a5e5e210772c1ffa6763
@@ -86,4 +86,4 @@ Assets:
 - Assets/HotUpdateResources/UI/bg_Input0_n.png
 - Assets/HotUpdateResources/Prefab/uiview_btnview.prefab
 Dependencies:
-- /Users/jason/Documents/GitHub/JEngine/UnityProject/Bundles/OSX/assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle
+- /Users/jason/Documents/GitHub/JEngine/UnityProject/Bundles/OSX/hotresources_auto_assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle

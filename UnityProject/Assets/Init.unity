@@ -374,8 +374,7 @@ MonoBehaviour:
   - Assets/HotUpdateResources
   loadMode: 0
   manifests:
-  - name: HotResources
-    autoUpdate: 1
+  - HotResources
   progressBar: {fileID: 1847636611}
   progressText: {fileID: 1946342720}
 --- !u!4 &964396227

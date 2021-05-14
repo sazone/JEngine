@@ -2,6 +2,26 @@
 
 
 
+### v0.6.2 (April 30 2021)
+
+- **Fixed** plenty of bugs
+- **Support** XAsset 6.1 (Regards to branch xasset6.1)
+- **Optimize** JAction
+- **Optimize** Downloader
+- **Optimize** ClassBind **performance**
+- **Optimize** localization solution
+- **Optimize** hot object inspector **serialization**
+- **Optimize** ILRuntime **Cross domain adapter generator**
+- **Optimize** ```GameObject.Instantiate``` CLR Redirection
+- **Upgrade** JEngine**Panel**
+- **Upgrade** JUI's **Bindable Property** feature
+- **Upgrade** ILRuntime to  **v1.6.7**
+- **Add** ClassBind support **filters** on automatically fetching fields
+- **Add** hot **source code supports memory encryption** and does not effect performence
+- **Add** JEngine **Demos** （Instantiate, Generic Cross Domain Adaptor, etc）
+
+
+
 ### v0.6.1 (Janurary 4 2021)
 
 - ILRuntime update to **v1.6.6**
@@ -432,17 +452,7 @@
   - Repeat until
 
     ```c#
-    int num = 10;
-    float repeatDuration = 0.5f;
-    float timeout = 10f;
-    JAction j = new JAction();
-    j.RepeatUntil(() =>
-                 {
-                   Log.Print($"num is more than 0, num--");
-                   num--;
-                 },
-                 () => num <= 0, repeatDuration, timeout)
-      .Excute();
+    int num = 10;float repeatDuration = 0.5f;float timeout = 10f;JAction j = new JAction();j.RepeatUntil(() =>             {               Log.Print($"num is more than 0, num--");               num--;             },             () => num <= 0, repeatDuration, timeout)  .Excute();
     ```
 
     
@@ -450,10 +460,7 @@
   - Wait Until
 
     ```c#
-    JAction j = new JAction();
-    j.Until(()=> something is done)
-      .Do(something)
-      .Excute();
+    JAction j = new JAction();j.Until(()=> something is done)  .Do(something)  .Excute();
     ```
 
     
@@ -463,17 +470,7 @@
 - **JAction** which **supports less code but do more**
 
   ```c#
-  JAction j = new JAction();
-  j.Do(() =>
-        {
-          Log.Print("Hello from JAction!");
-        })
-    .Delay(3.0f)
-    .Do(() =>
-        {
-          Log.Print("Bye from JAction");
-        })
-    .Excute();
+  JAction j = new JAction();j.Do(() =>      {        Log.Print("Hello from JAction!");      })  .Delay(3.0f)  .Do(() =>      {        Log.Print("Bye from JAction");      })  .Excute();
   ```
 
   

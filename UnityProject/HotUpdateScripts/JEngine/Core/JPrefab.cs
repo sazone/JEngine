@@ -23,7 +23,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-using VEngine;
+using libx;
 using System;
 using System.Text;
 using UnityEngine;
@@ -44,9 +44,9 @@ namespace JEngine.Core
             {
                 path = new StringBuilder(path).Append(".prefab").ToString();
             }
-            _request = Asset.LoadAsync(path, typeof(GameObject));
+            _request = Assets.LoadAssetAsync(path, typeof(GameObject));
             Loaded = false;
-            _request.completed += (Asset request) =>
+            _request.completed += (AssetRequest request) =>
             {
                 Loaded = true;
                 Instance = (GameObject)request.asset;
@@ -67,9 +67,9 @@ namespace JEngine.Core
             {
                 path = new StringBuilder(path).Append(".prefab").ToString();
             }
-            _request = Asset.LoadAsync(path, typeof(GameObject));
+            _request = Assets.LoadAssetAsync(path, typeof(GameObject));
             Loaded = false;
-            _request.completed += (Asset request) =>
+            _request.completed += (AssetRequest request) =>
             {
                 Loaded = true;
                 Instance = (GameObject)request.asset;
@@ -81,7 +81,7 @@ namespace JEngine.Core
 
         private string path;
 
-        private Asset _request;
+        private AssetRequest _request;
 
         /// <summary>
         /// If the prefab has loaded or not (if it has error, it will still be loaded)
@@ -111,7 +111,7 @@ namespace JEngine.Core
         /// State of loading a prefab
         /// 加载prefab的状态
         /// </summary>
-        public LoadableStatus State => _request.status;
+        public LoadState State => _request.loadState;
 
         /// <summary>
         /// Prefab GameObject (this is not in scene and it has not been instantiated)

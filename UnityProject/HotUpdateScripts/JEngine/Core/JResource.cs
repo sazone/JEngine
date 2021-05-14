@@ -24,7 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using VEngine;
+using libx;
 
 namespace JEngine.Core
 {
@@ -40,7 +40,7 @@ namespace JEngine.Core
         /// <returns></returns>
         public static T LoadRes<T>(string path, MatchMode mode = MatchMode.AutoMatch) where T : UnityEngine.Object
         {
-            var res = Asset.Load(ResPath(path, mode), typeof(T));
+            var res = Assets.LoadAsset(ResPath(path, mode), typeof(T));
             return res.asset as T;
         }
 
@@ -54,7 +54,7 @@ namespace JEngine.Core
         /// <param name="mode"></param>
         public static void LoadResAsync<T>(string path, Action<T> callback, MatchMode mode = MatchMode.AutoMatch) where T : UnityEngine.Object
         {
-            var res = Asset.LoadAsync(ResPath(path, mode), typeof(T)).completed += delegate (Asset resource)
+            var res = Assets.LoadAssetAsync(ResPath(path, mode), typeof(T)).completed += delegate (AssetRequest resource)
             {
                 callback?.Invoke(resource.asset as T);
             };
@@ -75,8 +75,8 @@ namespace JEngine.Core
         /// <param name="additive"></param>
         public static async void LoadSceneAsync(string path, Action callback = null, bool additive = false)
         {
-            var req = Scene.LoadAsync(path, null, additive);
-            req.completed += delegate (Scene s)
+            var req = Assets.LoadSceneAsync(path, additive);
+            req.completed += delegate
             {
                 callback?.Invoke();
                 LoadSceneProgress = 1;

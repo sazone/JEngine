@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1513063144, guid: adb6f6adaa979464f93916bbe45b4d40, type: 3}
+  m_Script: {fileID: 1513063144, guid: f4e636660725244b2b507ea55520bc10, type: 3}
   m_Name: DefaultSettings
   m_EditorClassIdentifier: 
   excludeFiles:
@@ -26,6 +26,6 @@ MonoBehaviour:
   playerGroups: []
   buildPlayerGroupsIndex: 0
   buildAssetBundleOptions: 384
-  scriptPlayMode: 1
+  scriptPlayMode: 2
   buildMode: 0
   startupScene: {fileID: 0}

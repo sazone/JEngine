@@ -26,7 +26,7 @@
 using System;
 using System.Collections.Generic;
 using JEngine.Core;
-using VEngine;
+using libx;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
@@ -36,15 +36,15 @@ namespace JEngine.UI.ResKit
     public class GameResMgr
     {
         /// <summary> 资源分类策略，分类型存储,key = 加载类型,value = 资源 </summary>
-        Dictionary<ResType, Dictionary<string, Asset>> _gameDic = null;
+        Dictionary<ResType, Dictionary<string, AssetRequest>> _gameDic = null;
 
         Dictionary<string, Action<Object>> _gameActionDic = null;
 
         public GameResMgr()
         {
-            _gameDic = new Dictionary<ResType, Dictionary<string, Asset>>();
+            _gameDic = new Dictionary<ResType, Dictionary<string, AssetRequest>>();
             foreach (ResType type in Enum.GetValues(typeof(ResType)))
-                _gameDic.Add(type, new Dictionary<string, Asset>());
+                _gameDic.Add(type, new Dictionary<string, AssetRequest>());
 
             _gameActionDic = new Dictionary<string, Action<Object>>();
         }
@@ -55,19 +55,19 @@ namespace JEngine.UI.ResKit
 
         public bool IsExistRes(ResType type, string name) { return _gameDic[type].ContainsKey(name); }
 
-        public void AddAssetRequest(Asset req, string name, ResType loadType)
+        public void AddAssetRequest(AssetRequest req, string name, ResType loadType)
         {
             if (!_gameDic.ContainsKey(loadType))
-                _gameDic.Add(loadType, new Dictionary<string, Asset>());
+                _gameDic.Add(loadType, new Dictionary<string, AssetRequest>());
             if (!_gameDic[loadType].ContainsKey(name))
                 _gameDic[loadType].Add(name, req);
         }
 
-        public Asset GetAssetRequest(string resName, ResType loadType)
+        public AssetRequest GetAssetRequest(string resName, ResType loadType)
         {
             if (string.IsNullOrEmpty(resName)) return null;
-            Asset req = null;
-            Dictionary<string, Asset> _dic = null;
+            AssetRequest req = null;
+            Dictionary<string, AssetRequest> _dic = null;
             _gameDic.TryGetValue(loadType, out _dic);
             if (_dic == null || _dic.Count == 0) return req;
             _dic.TryGetValue(resName, out req);
@@ -76,7 +76,7 @@ namespace JEngine.UI.ResKit
 
         public Object GetObject(ResType type, string name)
         {
-            Asset req = GetAssetRequest(name, type);
+            AssetRequest req = GetAssetRequest(name, type);
             return req != null ? req.asset : null;
         }
 
@@ -86,11 +86,11 @@ namespace JEngine.UI.ResKit
         /// </summary>
         public T LoadAsset<T>(ResType loadType, string name) where T : UnityEngine.Object
         {
-            Asset res = GetAssetRequest(name, loadType);
+            AssetRequest res = GetAssetRequest(name, loadType);
             if (res == null)
             {
                 AddAssetRequest(res, name, loadType);
-                res = Asset.Load(name, typeof(T));
+                res = Assets.LoadAsset(name, typeof(T));
             }
             return res.asset as T;
         }
@@ -100,7 +100,7 @@ namespace JEngine.UI.ResKit
         /// </summary>
         public void LoadAssetAsync<T>(ResType loadType, string name, AssetType assetType, Action<Object> callback) where T : UnityEngine.Object
         {
-            Asset res = GetAssetRequest(name, loadType);
+            AssetRequest res = GetAssetRequest(name, loadType);
             if (res != null)
             {
                 callback?.Invoke(res.asset as T);
@@ -114,8 +114,8 @@ namespace JEngine.UI.ResKit
             else
             {
                 _gameActionDic.Add(name, callback);
-                res = Asset.LoadAsync(ResPath.Instance.GetPath(name, assetType), typeof(T));
-                Action<Asset> call = (resource) =>
+                res = Assets.LoadAssetAsync(ResPath.Instance.GetPath(name, assetType), typeof(T));
+                Action<AssetRequest> call = (resource) =>
                 {
                     AddAssetRequest(res, name, loadType);
                     //callback?.Invoke(resource.asset as T);
@@ -141,7 +141,7 @@ namespace JEngine.UI.ResKit
         /// <param name="additive">是否叠加在现有场景上</param>
         public async void LoadSceneAsync(string path, Action callback = null, bool additive = false)
         {
-            var req = Scene.LoadAsync(path,null, additive);
+            var req = Assets.LoadSceneAsync(path, additive);
             req.completed += delegate
             {
                 callback?.Invoke();
@@ -161,7 +161,7 @@ namespace JEngine.UI.ResKit
         {
             if (_gameDic[type].ContainsKey(name))
             {
-                _gameDic[type][name].Release();
+                Assets.UnloadAsset(_gameDic[type][name]);
                 _gameDic[type].Remove(name);
             }
         }
@@ -171,9 +171,9 @@ namespace JEngine.UI.ResKit
         /// </summary>
         public void UnloadAsset(ResType type)
         {
-            foreach (Asset req in _gameDic[type].Values)
+            foreach (AssetRequest req in _gameDic[type].Values)
             {
-                req.Release();
+                Assets.UnloadAsset(req);
             }
             _gameDic[type].Clear();
         }
@@ -187,7 +187,7 @@ namespace JEngine.UI.ResKit
             {
                 if (_gameDic[type].ContainsKey(names[i]))
                 {
-                    _gameDic[type][names[i]].Release();
+                    Assets.UnloadAsset(_gameDic[type][names[i]]);
                     _gameDic[type].Remove(names[i]);
                 }
             }
@@ -198,7 +198,7 @@ namespace JEngine.UI.ResKit
         /// </summary>
         public void RemoveUnusedAssets()
         {
-            //6.1不需要这个
+            Assets.RemoveUnusedAssets();
         }
         #endregion
     }

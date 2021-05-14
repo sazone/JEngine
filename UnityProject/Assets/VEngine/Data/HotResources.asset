@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 819988854, guid: adb6f6adaa979464f93916bbe45b4d40, type: 3}
+  m_Script: {fileID: 819988854, guid: f4e636660725244b2b507ea55520bc10, type: 3}
   m_Name: HotResources
   m_EditorClassIdentifier: 
   groups:
   - {fileID: 11400000, guid: 9cb8faa75910f415185fbb56789f6ff9, type: 2}
   - {fileID: 11400000, guid: 00aea299b0a0a48c08900782330a13dc, type: 2}
-  size: 1543324
+  size: 1543352
   settings: {fileID: 11400000, guid: cfeff71045f334665825698abb33936d, type: 2}

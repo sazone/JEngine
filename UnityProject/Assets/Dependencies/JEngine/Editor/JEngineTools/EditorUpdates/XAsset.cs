@@ -22,49 +22,33 @@ namespace JEngine.Editor
             //Hook
             if (!_hookedBuildEvents)
             {
-                VEngine.Editor.BuildScript.beforeBuildBundles = (build) =>
+                bool hasConvert = false;
+                VEngine.Editor.BuildScript.preprocessBuildBundles = (manifest) =>
                 {
-                    DLLMgr.Delete("Assets/HotUpdateResources/Dll/HotUpdateScripts.bytes");
-                    CryptoWindow.ShowWindow();
-                    CryptoWindow.Build = s =>
+                    if (hasConvert) return;
+                    var path = "Assets/HotUpdateResources/Dll/HotUpdateScripts.bytes";
+                    DLLMgr.Delete(path);
+                    var key = UnityEngine.Object.FindObjectOfType<InitJEngine>().key;
+                    var watch = new Stopwatch();
+                    watch.Start();
+                    var bytes = DLLMgr.FileToByte(DLLMgr.DllPath);
+                    var b = DLLMgr.ByteToFile(CryptoHelper.AesEncrypt(bytes, key), path);
+                    watch.Stop();
+                    Log.Print(String.Format(Setting.GetString(SettingString.DLLConvertLog),
+                        watch.ElapsedMilliseconds));
+                    if (!b)
                     {
-                        var watch = new Stopwatch();
-                        watch.Start();
-                        var bytes = DLLMgr.FileToByte(DLLMgr.DllPath);
-                        var b = DLLMgr.ByteToFile(CryptoHelper.AesEncrypt(bytes, s),
-                            "Assets/HotUpdateResources/Dll/HotUpdateScripts.bytes");
-                        watch.Stop();
-                        Log.Print(String.Format(Setting.GetString(SettingString.DLLConvertLog),
-                            watch.ElapsedMilliseconds));
-                        if (!b)
-                        {
-                            Log.PrintError(".dll加密转.bytes出错！");
-                            return;
-                        }
-                        build();
-                    };
+                        Log.PrintError(".dll加密转.bytes出错！");
+                        return;
+                    }
+                    hasConvert = true;
                 };
-                Log.Print(1);
+                VEngine.Editor.BuildScript.postprocessBuildBundles = (manifest) =>
+                {
+                    hasConvert = true;
+                };
                 _hookedBuildEvents = true;
             }
-            
-            if (!Setting.XAssetLoggedIn || _delaying || _verifying || XAssetHelper.loggingXAsset) return;
-
-            //验证
-            _verifying = true;
-            var result = await XAssetHelper.LoginXAsset();
-            _verifying = false;
-            
-            if (!result)
-            {
-                XAssetHelper.LogOutXAsset();
-                EditorUtility.DisplayDialog("XAsset", "登入状态异常，请重新登入\n" +
-                                                      "An error just occured, please log in again", "OK");
-                Setting.Refresh();
-            }
-            _delaying = true;
-            await Task.Delay(TimeSpan.FromSeconds(_frequency));
-            _delaying = false;
         }
     }
 }

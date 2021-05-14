@@ -34,13 +34,9 @@ public class Initializer : MonoBehaviour
     ///     初始化的清单配置，可以配置包内和包外的清单，底层会自动按需更新下载
     /// </summary>
     [Tooltip("初始化的清单配置，可以配置包内和包外的清单，底层会自动按需更新下载")]
-    public ManifestInfo[] manifests =
+    public string[] manifests =
     {
-        new ManifestInfo
-        {
-            autoUpdate = true,
-            name = "HotResources"
-        }
+        "HotResources"
     };
 
     public Slider progressBar;
@@ -101,7 +97,7 @@ public class Initializer : MonoBehaviour
         }
         
         //更新全部
-        var update = Versions.UpdateAsync();
+        var update = Versions.UpdateAsync(manifests);
         yield return update;
         if (update.status == OperationStatus.Failed)
         {

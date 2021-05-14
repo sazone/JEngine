@@ -1,19 +1,19 @@
 ManifestFileVersion: 0
-CRC: 1690894160
+CRC: 852205638
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: hotresources_bundled_hotupdateresources_49ba8bc1c812f323ee83ed6bb916b805.bundle
+      Name: hotresources_bundled_hotupdateresources_54f6e2bc72ee353c7ed12776859febde.bundle
       Dependencies:
-        Dependency_0: assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle
+        Dependency_0: hotresources_auto_assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle
     Info_1:
-      Name: assets_hotupdateresources_scene_game_339730705298a0ec5505b23877d99805.bundle
+      Name: hotresources_bundled_scenes_game_24fb7b9bd87926161a886bab29310a6c.bundle
       Dependencies:
-        Dependency_0: hotresources_bundled_hotupdateresources_49ba8bc1c812f323ee83ed6bb916b805.bundle
-        Dependency_1: assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle
+        Dependency_0: hotresources_bundled_hotupdateresources_54f6e2bc72ee353c7ed12776859febde.bundle
+        Dependency_1: hotresources_auto_assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle
     Info_2:
-      Name: assets_hotupdateresources_scene_uidemo_57af103f54d760f876aa8814305c296e.bundle
+      Name: hotresources_bundled_scenes_uidemo_57af103f54d760f876aa8814305c296e.bundle
       Dependencies: {}
     Info_3:
-      Name: assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle
+      Name: hotresources_auto_assets_resources_animations_7c31f68ea9e79061d50b717a2012fd2f.bundle
       Dependencies: {}
