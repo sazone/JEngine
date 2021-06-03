@@ -71,7 +71,7 @@ public class Initializer : MonoBehaviour
         Versions.DownloadURL = url;
         Logger.Loggable = GameStats.Debug;
         
-        var operation = Versions.InitializeAsync(manifests);
+        var operation = Versions.InitializeAsync();
         yield return operation;
         if (operation.status == OperationStatus.Failed)
         {
