@@ -9,3 +9,5 @@ UnityProject/obj/*
 UnityProject/*.csproj
 UnityProject/UnityProject.sln
 UnityProject/HotUpdateScripts/obj/*
+UnityProject/Assets/VEngine.meta
+UnityProject/Assets/VEngine/
